@@ -4,6 +4,12 @@ $(function() {
     return;
   }
 
+  var lang = Cookies.get('lang');
+  if (lang) {
+    changeLanguage(lang);
+    return;
+  }
+
   var modalHtml = ' \
 <a class="fancybox" href="#modal-content"></a> \
 <div id="modal-content" style="display:none; width: 80%"> \
@@ -20,9 +26,15 @@ Please select your language. \
 
   $('#modal-content li a').click(function() {
     var lang = $(this).data('lang');
+    changeLanguage(lang);
+  });
+
+  function changeLanguage(lang) {
+    Cookies.set('lang', lang);
 
     var path = location.pathname;
-    path = path.replace(/\.html$/, '-' + lang + '.html');
-    location.pathname = path;
-  });
+    path = path.replace(/-[^\/\-]*\.html$/, '');
+    path = path.replace(/\.html$/, '');
+    location.pathname = path + '-' + lang + '.html';
+  }
 });
