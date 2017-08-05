@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+  <style type="text/css">
+    #modal-content {
+      font-size: xx-large;
+    }
+  </style>
+</head>
+<body>
+  <a class="fancybox" href="#modal-content"></a>
+  <div id="modal-content" style="display:none; width: 80%">
+    Please select your language.
+    <ul>
+      <li><a href="#" data-lang="en">English</a></li>
+      <li><a href="#" data-lang="ja">日本語</a></li>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $('.fancybox').fancybox({}).click();
+
+      $('#modal-content li a').click(function() {
+        var lang = $(this).data('lang');
+
+        var path = location.pathname;
+        path = path.replace(/\.html$/, '-' + lang + '.html');
+        location.pathname = path;
+      });
+    })
+  </script>
+</body>
+</html>
