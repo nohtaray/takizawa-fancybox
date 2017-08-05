@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+  <style type="text/css">
+    #modal-content {
+      font-size: xx-large;
+    }
+
+  </style>
+
+</head>
+<body>
+  <a class="fancybox" href="#modal-content"></a>
+
+  <div id="modal-content" style="display:none; width: 80%">
+    Please select your language.
+    <ul>
+      <li>English</li>
+      <li>日本語</li>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      $('.fancybox').fancybox({}).click();
+    })
+  </script>
+</body>
+</html>
