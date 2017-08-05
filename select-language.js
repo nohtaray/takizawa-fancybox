@@ -35,6 +35,9 @@ Please select your language. \
     var path = location.pathname;
     path = path.replace(/-[^\/\-]*\.html$/, '');
     path = path.replace(/\.html$/, '');
-    location.pathname = path + '-' + lang + '.html';
+    path = path + '-' + lang + '.html';
+    if (path != location.pathname) {
+      location.pathname = path;
+    }
   }
 });
