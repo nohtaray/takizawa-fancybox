@@ -1,21 +1,24 @@
 <html>
 <head>
-	<meta charset="utf-8">
-	<title></title>
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="./test.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+  	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min.js"></script>
+  	<script type="text/javascript" src="./test.js" charset="utf-8"></script>
 </head>
 <body>
-	<select>
-		<option>
-				言語選択
+	<form name="test_form">
+	<select name="test_lang" id="test_lang">
+		<option value="">
+				Language
 		</option>
-		<option>
+		<option value="ja">
 				日本語
 		</option>
-		<option>
+		<option value="en">
 				English
 		</option>
 	</select>
+	</form>
 </body>
 </html>
