@@ -6,9 +6,19 @@
     #modal-content {
       font-size: xx-large;
     }
+    .select-lang {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-left: 10px;
+      color: #fff;
+      border: none;
+    }
   </style>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="./selectbox.css" />
+
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min.js"></script>
@@ -17,7 +27,7 @@
 <body>
 
   <form name="select_form">
-  <select name="select_lang" id="select_lang">
+  <select name="select_lang" id="select_lang" class="select-lang styled-select blue rounded">
     <option value="">
         Language
     </option>
@@ -31,6 +41,5 @@
   </form>
 
   <a href="#" onclick="Cookies.remove('lang')">言語リセット（テスト用）</a>
-
 </body>
 </html>
