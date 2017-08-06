@@ -4,6 +4,24 @@ $(function() {
     return;
   }
 
+  var event = document.getElementById('select_lang');
+  console.log(event);
+  event.onchange = function() { // セレクトボックスに変更が加えられたら
+    var index = document.select_form.select_lang.selectedIndex;
+    var val = document.select_form.select_lang.options[index].value;
+    console.log(val);
+
+    if(index != 0) {
+      changeLanguage(val);
+      console.log("OK");
+    }
+  }
+
+  $('#modal-content li a').click(function() {
+    var lang = $(this).data('lang');
+    changeLanguage(lang);
+  });
+
   var lang = Cookies.get('lang');
   if (lang) {
     changeLanguage(lang);
@@ -24,23 +42,6 @@ $(function() {
   $(document.body).append(modalHtml);
 
   $('.fancybox').fancybox({}).click();
-
-  $('#modal-content li a').click(function() {
-    var lang = $(this).data('lang');
-    changeLanguage(lang);
-  });
-
-  var event = document.getElementById('select_lang');
-  event.onchange = function() { // セレクトボックスに変更が加えられたら
-    var index = document.select_form.select_lang.selectedIndex;
-    var val = document.select_form.select_lang.options[index].value;
-    console.log(1);
-
-    if(index != 0) {
-      changeLanguage(val);
-      console.log(2);
-    }
-  }
 
   function changeLanguage(lang) {
     Cookies.set('lang', lang);
