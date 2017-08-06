@@ -34,9 +34,11 @@ $(function() {
   event.onchange = function() { // セレクトボックスに変更が加えられたら
     var index = document.select_form.select_lang.selectedIndex;
     var val = document.select_form.select_lang.options[index].value;
+    console.log(1);
 
     if(index != 0) {
       changeLanguage(val);
+      console.log(2);
     }
   }
 
